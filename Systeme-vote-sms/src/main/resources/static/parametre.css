@@ -1,0 +1,256 @@
+/*Barre de progression*/
+#progressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background: linear-gradient(90deg, #ff007a, #ff4800, #de006f);
+    z-index: 10000;
+    transition: width 0.2s ease-out, opacity 0.4s ease-in-out;
+    box-shadow: 0px 0px 10px rgba(255, 0, 122, 0.6);
+    border-radius: 2px;
+}
+
+body{
+    background-color: #f4f4f9;
+}
+
+.main{
+    margin-top: 15px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.setting_title{
+    font-size: 50px;
+    font-family: 'Playfair Display', serif !important;
+}
+
+.insert_title{
+    margin-top: 25px;
+    font-size: 20px;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+.setting_input{
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+#inputValeur{
+    width: 40%;
+    padding: 9px;
+    border: 1px solid rgb(54, 54, 54);
+    border-radius: 8px;
+    transition: 0.1s;
+}
+
+#inputValeur:focus{
+    outline: none;
+    border: 1px solid rgb(37, 124, 229);
+    box-shadow: 0 0 7px rgba(52, 152, 219, 0.5);
+}
+
+#inputValeur:hover{
+    transform: scale(1.03);
+}
+
+.setting_input button{
+    margin-top: 0.5px;
+    width: 80px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    transition: 0.1s;
+    font-family: 'Poppins', sans-serif !important;
+    color: #fff;
+    background: linear-gradient(to bottom, #3498db, #2980b9);
+}
+
+.setting_input button:hover{
+    transform: scale(1.1);
+    background: linear-gradient(to bottom, #2980b9, #1c6690);
+}
+
+/***********************************************************************
+-----------------------------TABLEAU------------------------------------
+***********************************************************************/
+
+.setting_table_container{
+    margin-top: 42px;
+    max-height: 379px;
+    overflow: auto;
+}
+
+#setting_table{
+    font-family: 'Montserrat', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    table-layout: fixed;
+    margin: auto;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.28);
+}
+
+#setting_table thead{
+    position: sticky;/*En-tête reste visible en haut au scroll*/
+    top: 0;
+    background-color: #1e6bb8;
+    z-index: 2;
+}
+
+/* Réduit la largeur de la colonne "Modifier" */
+#setting_table td:nth-child(3), #setting_table th:nth-child(3) {
+    background-color: #e7e7e7;
+    text-align: center;
+    color: #fff;
+    width: 120px;
+}
+
+/* Réduit la largeur de la colonne "Supprimer */
+#setting_table td:nth-child(4),
+#setting_table th:nth-child(4) {
+    background-color: #e7e7e7;
+    text-align: center;
+    color: #ffffff;
+    width: 120px;
+}
+
+
+.delete-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+}
+
+.delete-btn:hover{
+    color: red;
+    transform: scale(1.2);
+}
+
+/*Tooltip*/
+.delete-btn::after{
+    content: "Supprimer";
+    visibility: hidden;
+    opacity: 0;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    font-size: 12px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Affiche le tooltip au survol */
+.delete-btn:hover::after{
+    visibility: visible;
+    opacity: 1;
+}
+
+#setting_table td, #setting_table th {
+    border: 1px solid #a5b9ed;
+    padding: 8px;
+    width: 890px;
+    word-wrap: break-word;
+}
+
+/* Réduit la largeur de la colonne "Numéro vote" */
+#setting_table td:nth-child(1), #setting_table th:nth-child(1) {
+    width: 200px;
+}
+
+#setting_table tr:nth-child(even){background-color: #ffffff;} 
+
+#setting_table tr:hover {background-color: #97cddd8f;} 
+
+#setting_table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background: linear-gradient(to top, #197dda, #146fc5) !important;
+    color: #fff;
+}
+
+/*Modifier collone 2*/
+.edit-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: inherit;
+    background: transparent;
+}
+
+
+/********************Bouton suivant********************/
+.button-container:hover{
+    background: linear-gradient(to bottom, #14ae5c, #19b662);
+}
+
+.nextButton{
+    bottom: 40px;
+    position: fixed;
+    right: 80px;
+    z-index: 100;
+    font-family: 'Montserrat', sans-serif;
+    padding: 12px;
+    width:18%;
+
+    border-radius: 8px;
+    border: 2px solid #129e53;
+
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    color: #109f53;
+
+    transition: 0.1s;
+}
+
+.nextButton:hover{
+    background: linear-gradient(to bottom, #0f944d, #14a558);
+    color: #fff;
+    border: none;
+    transform: scale(1.2);
+    bottom: 42px;
+}
+
+.nextButton i{
+    margin-top: 0px;
+    font-size: 30px;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/*Restriction du bouton*/
+.disabled {
+    pointer-events: none; /* Empêche les clics */ 
+    opacity: 0.4; /* Diminue le visuel */
+    cursor: not-allowed;
+}
+
+
+/********************************Responsivité mobile********************************/
+@media (max-width: 768px) {
+    .evnt_container {
+        width: 90%;
+        min-height: auto;
+        padding: 20px;
+    }
+}

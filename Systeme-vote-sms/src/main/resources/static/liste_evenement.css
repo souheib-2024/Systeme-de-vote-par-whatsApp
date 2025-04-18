@@ -1,0 +1,110 @@
+body{
+    background-color: #f4f4f9;
+}
+
+.main{
+    margin-top: 15px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.evntList_title{
+    font-size: 50px;
+    font-family: 'Playfair Display', serif !important;
+}
+
+/********************Barre de recherche********************/
+.search-container {
+    margin-top: 35px;
+    position: relative;
+}
+
+.search-input {
+    height: 50px;
+    border-radius: 30px;
+    padding-left: 40px;
+    border: 1px solid rgb(54, 54, 54);
+}
+
+.search-input:focus{
+    border: 1px solid rgb(37, 124, 229);
+    box-shadow: 0 0 7px rgba(52, 152, 219, 0.5);
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 18px; /* Assure une bonne taille */
+    cursor: pointer; /* Rend l'icône cliquable */
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/***********************************************************************
+-----------------------------TABLEAU------------------------------------
+***********************************************************************/
+
+.voting_table_container{
+    margin-top: 42px;
+    max-height: 498.5px;
+    overflow: auto;
+}
+
+#voting_table{
+    font-family: 'Montserrat', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    table-layout: fixed;
+    margin: auto;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.28);
+}
+
+#voting_table thead{
+    position: sticky;/*En-tête reste visible en haut au scroll*/
+    top: 0;
+    background-color: rgb(105, 91, 111);
+    z-index: 2;
+}
+
+/* Réduit la largeur de la colonne "État" */
+#voting_table td:nth-child(3), #voting_table th:nth-child(3) {
+    text-align: center;
+    width: 300px;
+}
+
+#voting_table td, #voting_table th {
+    border: 1px solid #b39ec0;
+    padding: 8px;
+    width: 400px;
+    word-wrap: break-word;
+}
+
+/* Réduit la largeur de la colonne "Non évènement" */
+#voting_table td:nth-child(1), #voting_table th:nth-child(1) {
+    width: 600px;
+}
+
+#voting_table tr:nth-child(even){background-color: #ffffff;} 
+
+#voting_table tr:hover {background-color: #939db893;} 
+
+#voting_table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background: linear-gradient(to top, rgba(110, 95, 116, 0.756), rgba(98, 85, 103, 0.756)) !important;
+    color: #fff;
+}
+
+
+/********************************Responsivité mobile********************************/
+@media (max-width: 768px) {
+    .evnt_container {
+        width: 90%;
+        min-height: auto;
+        padding: 20px;
+    }
+}

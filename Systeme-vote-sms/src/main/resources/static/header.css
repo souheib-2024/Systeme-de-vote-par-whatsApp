@@ -1,0 +1,122 @@
+/****************** Header **********************/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #4A90E2; /* Bleu vif */
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease; /* Transition pour le texte */
+}
+
+.menu ul li a:hover {
+    color: #FFD700; /* Texte doré au survol */
+}
+
+.menu ul li a::after {
+    content: ''; /* Barre animée */
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #FFD700; /* Couleur de l'animation */
+    transition: width 0.3s ease; /* Animation fluide */
+}
+
+.menu ul li a:hover::after {
+    width: 100%; /* Barre pleine largeur au survol */
+}
+
+.account {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.admin-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.admin-icon:hover {
+    transform: scale(1.1); /* Mise en avant */
+}
+
+.dropdown-menu {
+    display: none; /* Masqué par défaut */
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.dropdown-menu.show {
+    display: block; /* Affiche le menu déroulant */
+}
+
+.dropdown-item {
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #4A90E2;
+    color: white;
+}
+
+i.bx-log-out {
+    margin-right: 5px;
+}
