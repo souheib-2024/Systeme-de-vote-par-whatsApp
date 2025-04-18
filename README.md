@@ -118,7 +118,14 @@ En Mode Live :
 1.	Stabilité : Les webhooks et tokens fonctionnent en production sans nécessiter de réauthentification constante
 2.	Accessibilité globale : Ton application peut être utilisée par des utilisateurs réels, pas seulement des testeurs
 NB : Une fois configurée, tu n'auras plus besoin de t'occuper manuellement des tests et des configurations temporaires
-Conditions pour passer en mode Live
+Conditions pour passer en mode Live.
+
+Mais pour les deux cas il faut que le systeme soit en ligne pour que l'api acceder et si ce n'est pas le cas utiliser une url publique 
+dans ma partie j'ai utilisé Ngrok qui est un outil qui permet de créer des tunnels sécurisés entre votre machine locale et Internet. 
+En d'autres termes, il vous donne une URL publique temporaire pour accéder à des applications ou des services hébergés localement, 
+sans avoir à configurer votre routeur ou pare-feu.
+
+
 Pour passer en mode Live, tu dois remplir certaines conditions imposées par Meta. Voici les principales étapes :
 a. Compléter la vérification de ton application
 •	Dans Meta for Developers, va sur la section Paramètres > Paramètres de base.
