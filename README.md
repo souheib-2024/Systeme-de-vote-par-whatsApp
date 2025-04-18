@@ -104,7 +104,60 @@ Ce fichier de configuration contrôle plusieurs aspects de ton application Sprin
 NB : Pour accéder à l'API Meta pour WhatsApp, il est nécessaire de suivre ces étapes :
 - Créer une application Meta en utilisant ton compte Facebook.
 - Générer un nouveau jeton d'accès (token) en suivant les instructions fournies par la documentation Meta.
-- Mettre à jour le token et l'identifiant de numéro de téléphone API WhatsApp (phone_number_id) dans les fichiers de configuration de ton applica
+- Mettre à jour le token et l'identifiant de numéro de téléphone API WhatsApp (phone_number_id) dans les fichiers de configuration de ton application
+
+L'API de whatshap :
+
+En Mode Développement :
+
+1.	Le token est temporaire
+2.	Tous les numéros doivent être vérifier 
+NB : De ce fait, on est obligé à chaque fois de configurer un nouveau token et ajouter et supprimer des numéros si nécessaires.
+
+En Mode Live :
+1.	Stabilité : Les webhooks et tokens fonctionnent en production sans nécessiter de réauthentification constante
+2.	Accessibilité globale : Ton application peut être utilisée par des utilisateurs réels, pas seulement des testeurs
+NB : Une fois configurée, tu n'auras plus besoin de t'occuper manuellement des tests et des configurations temporaires
+Conditions pour passer en mode Live
+Pour passer en mode Live, tu dois remplir certaines conditions imposées par Meta. Voici les principales étapes :
+a. Compléter la vérification de ton application
+•	Dans Meta for Developers, va sur la section Paramètres > Paramètres de base.
+•	Fournis les informations requises pour vérifier ton application :
+o	Nom de l'application.
+o	Contact email.
+o	Domaine d'hébergement (avec HTTPS obligatoire).
+o	Télécharge un logo si nécessaire.
+b. Vérification de l'entreprise
+•	Si tu utilises WhatsApp ou Instagram Business, Meta demande que ton entreprise soit vérifiée. Cela implique de :
+o	Soumettre des documents prouvant l'existence légale de ton entreprise.
+o	Ajouter ton domaine et vérifier que tu en es le propriétaire.
+o	Faire cela via Security Center dans Meta for Developers.
+
+
+c. Activer les permissions et autorisations
+•	Pour utiliser les API en mode Live, tu dois demander explicitement les permissions nécessaires. Voici les principales :
+o	WhatsApp : whatsapp_business_management, whatsapp_business_messaging.
+o	Messenger : pages_manage_metadata, pages_messaging.
+o	Instagram : instagram_manage_messages.
+•	Une fois demandé, Meta examinera les cas d'usage (tu devras expliquer clairement à Meta ce que tu fais, comme "collecter des votes via des options interactives").
+Configurer les webhooks
+•	Les webhooks utilisés en mode Développement doivent être finalisés avec une URL sécurisée.
+•	Assure-toi que ton endpoint répond correctement aux événements envoyés par les API Meta.
+. Comment passer en mode Live
+Une fois les étapes ci-dessus accomplies :
+1.	Va sur la page de ton application dans Meta for Developers.
+2.	Dans Paramètres > App Review, clique sur Make App Live.
+3.	Confirme que tu es prêt à activer le mode Live.
+4. Bénéfices du mode Live
+1.	Stabilité : Les webhooks et tokens fonctionnent en production sans nécessiter de réauthentification constante.
+2.	Accessibilité globale : Ton application peut être utilisée par des utilisateurs réels, pas seulement des testeurs.
+3.	Automatisation : Une fois configurée, tu n'auras plus besoin de t'occuper manuellement des tests et des configurations temporaires.
+Solutions spécifiques pour WhatsApp, Messenger et Instagram
+•	WhatsApp : En mode Live, tu peux gérer des conversations avec des utilisateurs réels via l'API Cloud de WhatsApp.
+•	Messenger : Envoie des boutons interactifs, carrousels ou messages automatisés via l'API Messenger.
+•	Instagram : Réponds aux messages directs et utilise des scénarios interactifs pour engager les utilisateurs.
+
+
 
 
 
